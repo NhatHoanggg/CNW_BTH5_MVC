@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 800;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+
+    table {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+    caption {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline ;
+    }
+</style>
+<body>
+    
+    <h1>BẢNG PHÒNG BAN</h1>
+    <table border = "1" width = "100%">
+        <tr> 
+            <th>ID NV</th> 
+            <th>Tên NV</th> 
+            <th>ID PB</th> 
+            <th>CHI TIẾT</th>
+        </tr>
+
+        <?php
+        foreach ($listPhongban as $phongban) {
+            echo
+            '<tr> 
+            <td>'.$phongban->idpb.'</td> 
+            <td>'.$phongban->tenpb.'</td> 
+            <td>'.$phongban->mota.'</td>         
+            <td><a href="?idpb='.$phongban->idpb.'">chi tiết</a></td> 
+            </tr> ' ;
+        }
+        ?>
+    </table>
+
+</body>
+</html>
